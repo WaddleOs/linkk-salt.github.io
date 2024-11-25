@@ -1,12 +1,13 @@
-/* Genel Ayarlar */
+/* GENEL AYARLAR */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #1e1e2f;
+    background: linear-gradient(135deg, #0d0d26, #1a1a3c);
     color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* Yağmur Efekti */
+/* YAĞMUR EFEKTİ */
 #rain {
     position: fixed;
     top: 0;
@@ -15,21 +16,21 @@ body {
     height: 100%;
     z-index: -1;
     background: url('rain.gif') repeat;
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
-/* Navigasyon Menüsü */
+/* NAVİGASYON MENÜSÜ */
 .navbar {
     display: flex;
     justify-content: center;
-    background: #252540;
+    background: rgba(20, 20, 40, 0.9);
     padding: 10px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    margin: 0;
     padding: 0;
 }
 
@@ -41,120 +42,80 @@ body {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #00c9ff;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
 }
 
 .navbar ul li a:hover, .navbar ul li a.active {
-    color: #00c9ff;
+    color: #ff007f;
 }
 
-/* Üst Kısım */
+/* AY YILDIZ GRAFİĞİ */
 .header {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(135deg, #252540, #1e1e2f);
+    background: url('moon-star.png') no-repeat center top / 200px, linear-gradient(135deg, #0d0d26, #1a1a3c);
 }
 
 .header h1 {
-    font-size: 48px;
-    margin: 0 0 10px;
-    color: #00c9ff;
+    font-size: 56px;
+    margin: 0;
+    background: linear-gradient(90deg, #00c9ff, #ff007f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neon-flicker 1.5s infinite alternate;
 }
 
 .header p {
     font-size: 18px;
-    margin-bottom: 20px;
+    margin-top: 15px;
+    color: #ffffff;
+    text-shadow: 0 0 5px #00c9ff;
 }
 
 .header button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #00c9ff;
+    margin-top: 30px;
+    padding: 10px 25px;
+    font-size: 18px;
     border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00c9ff, #ff007f);
     color: #ffffff;
-    transition: background 0.3s ease;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 10px #00c9ff;
 }
 
 .header button:hover {
-    background-color: #007ea7;
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #ff007f, 0 0 30px #00c9ff;
 }
 
-/* Ana İçerik */
-.main-content {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-.features h2 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #00c9ff;
-}
-
-.card {
-    background: #2b2b44;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    display: inline-block;
-    text-align: left;
-    width: 90%;
-    max-width: 400px;
-    margin: auto;
-}
-
-.card h3 {
-    font-size: 24px;
-    color: #ffffff;
-}
-
-.card p {
-    font-size: 16px;
-    color: #bbbbbb;
-}
-
-.card ul {
-    padding: 0;
-    list-style: none;
-    color: #ffffff;
-}
-
-.card ul li {
-    margin-bottom: 10px;
-}
-
-.buy-button {
-    display: block;
-    margin: 20px auto 0;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #00c9ff;
-    color: #ffffff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.buy-button:hover {
-    background-color: #007ea7;
-}
-
-/* Footer */
-.footer {
-    text-align: center;
-    padding: 20px;
-    background: #252540;
-    color: #bbbbbb;
-}
-
-.footer a {
-    color: #00c9ff;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    color: #007ea7;
+/* NEON EFEKT ANİMASYONU */
+@keyframes neon-flicker {
+    0% {
+        text-shadow: 0 0 5px #00c9ff, 0 0 15px #ff007f;
+    }
+    50% {
+        text-shadow: 0 0 10px #00c9ff, 0 0 20px #ff007f;
+    }
+    100% {
+        text-shadow: 0 0 5px #00c9ff, 0 0 15px #ff007f;
+    }
 }
