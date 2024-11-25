@@ -1,17 +1,27 @@
 /* Genel Ayarlar */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
-    background: radial-gradient(circle at top, #1a1a2e, #0c0f1a);
+    background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
     color: #e0e0e0;
     overflow-x: hidden;
 }
 
+/* Yağmur ve Yıldız Efekti */
+#rain, .stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
 /* Navigasyon Menüsü */
 .navbar {
-    background-color: rgba(10, 15, 35, 0.9);
+    background: rgba(15, 30, 40, 0.9);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -19,7 +29,7 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .navbar .logo {
@@ -36,12 +46,11 @@ body {
 .navbar .logo span {
     font-size: 1.8rem;
     font-weight: bold;
-    color: #00aaff;
+    color: #00e6e6;
+    text-shadow: 0 0 10px #00cccc, 0 0 20px #00cccc;
 }
 
 .navbar ul {
-    margin: 0;
-    padding: 0;
     list-style: none;
     display: flex;
     gap: 20px;
@@ -51,47 +60,44 @@ body {
     text-decoration: none;
     color: #e0e0e0;
     font-weight: 500;
-    transition: color 0.3s ease;
+    padding: 5px 10px;
+    transition: color 0.3s ease, background 0.3s ease;
 }
 
-.navbar ul li a:hover {
-    color: #00aaff;
+.navbar ul li a:hover, .navbar ul li a.active {
+    color: #fff;
+    background: #00e6e6;
+    border-radius: 5px;
 }
 
 /* Header */
 .header {
     text-align: center;
-    padding: 80px 20px;
-    background: rgba(0, 15, 35, 0.8);
-    position: relative;
+    padding: 100px 20px;
+    background: rgba(15, 30, 40, 0.9);
     color: #f0f0f0;
+    position: relative;
 }
 
-.header .moon {
-    width: 120px;
-    height: 120px;
-    background: radial-gradient(circle, #ffffff, #aaaaaa);
-    border-radius: 50%;
-    position: absolute;
-    top: -20px;
-    right: 40px;
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
-    animation: float 4s ease-in-out infinite;
+.header .stars {
+    background: url('https://cdn.pixabay.com/photo/2016/03/09/09/22/star-1248747_1280.png') repeat;
+    opacity: 0.3;
+    animation: sparkle 10s linear infinite;
 }
 
-@keyframes float {
-    0%, 100% {
-        transform: translateY(-10px);
+@keyframes sparkle {
+    from {
+        background-position: 0 0;
     }
-    50% {
-        transform: translateY(10px);
+    to {
+        background-position: 100% 100%;
     }
 }
 
 .header h1 {
     font-size: 3.5rem;
-    color: #00aaff;
-    text-shadow: 0 0 10px #0077ff, 0 0 20px #0077ff;
+    color: #00e6e6;
+    text-shadow: 0 0 10px #00cccc, 0 0 20px #00cccc;
 }
 
 .header p {
@@ -101,19 +107,19 @@ body {
 
 .header button {
     padding: 12px 24px;
-    background: #00aaff;
+    background: #00e6e6;
     border: none;
     color: #fff;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px #0077ff;
+    box-shadow: 0 0 15px #00cccc;
 }
 
 .header button:hover {
-    background: #0077ff;
-    box-shadow: 0 0 20px #0077ff;
+    background: #00cccc;
+    box-shadow: 0 0 25px #00cccc;
 }
 
 /* Footer */
@@ -121,10 +127,7 @@ body {
     text-align: center;
     padding: 20px;
     background: #0c0f1a;
-    color: #7d7d7d;
+    color: #aaa;
     border-top: 1px solid #222;
-}
-
-.footer small {
-    color: #555;
+    font-size: 0.9rem;
 }
