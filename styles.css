@@ -1,159 +1,142 @@
 /* Genel Ayarlar */
 body {
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #1a1a1a; /* Koyu arka plan */
-  color: #e0e0e0; /* Açık gri yazılar */
-}
-
-/* Yağmur Efekti */
-#rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: linear-gradient(to bottom, #0c0f1a, #1a1a2e);
+    color: #e0e0e0;
+    overflow-x: hidden;
 }
 
 /* Navigasyon Menüsü */
 .navbar {
-  background-color: rgba(0, 48, 103, 0.9); /* Koyu mavi */
-  padding: 15px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
+    background-color: rgba(15, 20, 40, 0.9);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.navbar .logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.navbar .logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00c8ff;
 }
 
 .navbar ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  justify-content: center;
-}
-
-.navbar ul li {
-  margin: 0 15px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    gap: 20px;
 }
 
 .navbar ul li a {
-  color: #e0e0e0;
-  text-decoration: none;
-  font-size: 1.1rem;
-  font-weight: 500;
-  transition: color 0.3s;
-}
-
-.navbar ul li a.active {
-  font-weight: bold;
-  text-decoration: underline;
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-  color: #00c8ff; /* Mavi hover rengi */
+    color: #00c8ff;
 }
 
-/* Üst Kısım */
+/* Header */
 .header {
-  text-align: center;
-  padding: 50px 20px;
-  background-color: rgba(0, 48, 103, 0.9); /* Koyu mavi */
-  color: #ffffff;
-  border-bottom: 5px solid #00c8ff; /* Parlak mavi alt sınır */
+    text-align: center;
+    padding: 60px 20px;
+    background: rgba(0, 20, 40, 0.8);
+    position: relative;
+}
+
+.header .moon {
+    width: 100px;
+    height: 100px;
+    background: radial-gradient(circle, #fdfdfd, #d4d4d4);
+    border-radius: 50%;
+    position: absolute;
+    top: -20px;
+    right: 30px;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(10px);
+    }
 }
 
 .header h1 {
-  font-size: 3rem;
+    font-size: 3rem;
+    color: #00c8ff;
 }
 
 .header p {
-  font-size: 1.5rem;
-  font-style: italic;
-  margin: 20px 0;
+    font-size: 1.2rem;
+    color: #e0e0e0;
+    margin: 20px 0;
 }
 
 .header button {
-  padding: 10px 20px;
-  background-color: #00c8ff; /* Parlak mavi */
-  border: none;
-  color: #fff;
-  font-size: 1rem;
-  cursor: pointer;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    background: #00c8ff;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 .header button:hover {
-  background-color: #008cc8; /* Daha koyu mavi */
+    background: #007ac7;
 }
 
-/* Orta Kısım */
-.main-content {
-  padding: 40px 20px;
-  max-width: 800px;
-  margin: 20px auto;
-  background-color: #2a2a2a; /* Koyu gri arka plan */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.features h2 {
-  font-size: 2rem;
-  color: #00c8ff;
-  text-align: center;
-}
-
-.card {
-  background-color: #333333; /* Koyu gri */
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-.card h3 {
-  font-size: 1.8rem;
-  color: #fff;
-}
-
-.card ul {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.card ul li {
-  font-size: 1rem;
-  margin: 5px 0;
-  color: #d1d1d1;
-}
-
-.card p {
-  font-size: 1.1rem;
+/* Yağmur Efekti */
+#rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
 }
 
 /* Footer */
 .footer {
-  background-color: #1a1a1a;
-  color: #b0b0b0;
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 30px;
-  font-size: 0.9rem;
+    text-align: center;
+    padding: 20px;
+    background: #0c0f1a;
+    color: #7d7d7d;
 }
 
 .footer a {
-  color: #00c8ff;
-  text-decoration: none;
-  margin: 0 5px;
-  font-weight: bold;
+    color: #00c8ff;
+    text-decoration: none;
 }
 
 .footer a:hover {
-  text-decoration: underline;
+    text-decoration: underline;
 }
