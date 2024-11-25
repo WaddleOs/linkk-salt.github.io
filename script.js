@@ -5,15 +5,25 @@ document.getElementById("shortenBtn").addEventListener("click", function () {
         return;
     }
 
-    // Kısaltma işlemi için API isteği yapılacak
+    // Proxy listesi
+    const proxyList = [
+        "https://advanced.name/freeproxy/6744b7cd4c36b",
+        // Daha fazla proxy ekleyebilirsiniz
+    ];
+
+    // Proxy seçmek için rastgele bir proxy seçiyoruz
+    const randomProxy = proxyList[Math.floor(Math.random() * proxyList.length)];
+
+    // ay.live API'si ile URL kısaltma isteği
     const apiUrl = `https://ay.live/st/?api=0327a9827dcdb42667cb49f96824030d6d46274c&url=${encodeURIComponent(urlInput)}`;
 
-    fetch(apiUrl)
+    // Proxy üzerinden API isteği yapıyoruz
+    fetch(randomProxy + apiUrl)
         .then(response => {
             if (!response.ok) {
-                throw new Error('API isteği başarısız oldu');
+                throw new Error('Proxy isteği başarısız oldu');
             }
-            return response.text(); // Kısaltılmış URL dönecek
+            return response.text();
         })
         .then(shortUrl => {
             const resultContainer = document.getElementById("resultContainer");
