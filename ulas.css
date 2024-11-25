@@ -1,12 +1,13 @@
-/* Genel Ayarlar */
+/* GENEL AYARLAR */
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    background-color: #1e1e2f;
+    background: linear-gradient(135deg, #0d0d26, #1a1a3c);
     color: #ffffff;
+    overflow-x: hidden;
 }
 
-/* Yağmur Efekti */
+/* YAĞMUR EFEKTİ */
 #rain {
     position: fixed;
     top: 0;
@@ -15,21 +16,21 @@ body {
     height: 100%;
     z-index: -1;
     background: url('rain.gif') repeat;
-    opacity: 0.3;
+    opacity: 0.15;
 }
 
-/* Navigasyon Menüsü */
+/* NAVİGASYON MENÜSÜ */
 .navbar {
     display: flex;
     justify-content: center;
-    background: #252540;
+    background: rgba(20, 20, 40, 0.9);
     padding: 10px 0;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.6);
 }
 
 .navbar ul {
     list-style: none;
     display: flex;
-    margin: 0;
     padding: 0;
 }
 
@@ -41,61 +42,80 @@ body {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
-    transition: color 0.3s ease;
+    font-size: 16px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar ul li a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background: #00c9ff;
+    transition: width 0.3s ease;
+}
+
+.navbar ul li a:hover::after {
+    width: 100%;
 }
 
 .navbar ul li a:hover, .navbar ul li a.active {
-    color: #00c9ff;
+    color: #ff007f;
 }
 
-/* Ana İçerik */
-.contact-section {
-    padding: 50px 20px;
+/* AY YILDIZ GRAFİĞİ */
+.header {
     text-align: center;
+    padding: 100px 20px;
+    background: url('moon-star.png') no-repeat center top / 200px, linear-gradient(135deg, #0d0d26, #1a1a3c);
 }
 
 .header h1 {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #00c9ff;
+    font-size: 56px;
+    margin: 0;
+    background: linear-gradient(90deg, #00c9ff, #ff007f);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: neon-flicker 1.5s infinite alternate;
 }
 
 .header p {
     font-size: 18px;
-    margin-bottom: 20px;
-}
-
-.buy-button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #00c9ff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    margin-top: 15px;
     color: #ffffff;
-    transition: background 0.3s ease;
+    text-shadow: 0 0 5px #00c9ff;
 }
 
-.buy-button:hover {
-    background-color: #007ea7;
+.header button {
+    margin-top: 30px;
+    padding: 10px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(90deg, #00c9ff, #ff007f);
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 0 0 10px #00c9ff;
 }
 
-.working-hours, .social-media {
-    margin: 30px 0;
+.header button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 20px #ff007f, 0 0 30px #00c9ff;
 }
 
-h2 {
-    font-size: 24px;
-    color: #00c9ff;
-}
-
-.icons img {
-    width: 40px;
-    height: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s ease;
-}
-
-.icons img:hover {
-    transform: scale(1.1);
+/* NEON EFEKT ANİMASYONU */
+@keyframes neon-flicker {
+    0% {
+        text-shadow: 0 0 5px #00c9ff, 0 0 15px #ff007f;
+    }
+    50% {
+        text-shadow: 0 0 10px #00c9ff, 0 0 20px #ff007f;
+    }
+    100% {
+        text-shadow: 0 0 5px #00c9ff, 0 0 15px #ff007f;
+    }
 }
