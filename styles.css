@@ -4,14 +4,14 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background: linear-gradient(to bottom, #0c0f1a, #1a1a2e);
+    background: radial-gradient(circle at top, #1a1a2e, #0c0f1a);
     color: #e0e0e0;
     overflow-x: hidden;
 }
 
 /* Navigasyon Menüsü */
 .navbar {
-    background-color: rgba(15, 20, 40, 0.9);
+    background-color: rgba(10, 15, 35, 0.9);
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
@@ -19,24 +19,24 @@ body {
     position: sticky;
     top: 0;
     z-index: 1000;
-    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
 .navbar .logo {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .navbar .logo img {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
 }
 
 .navbar .logo span {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-    color: #00c8ff;
+    color: #00aaff;
 }
 
 .navbar ul {
@@ -55,25 +55,26 @@ body {
 }
 
 .navbar ul li a:hover {
-    color: #00c8ff;
+    color: #00aaff;
 }
 
 /* Header */
 .header {
     text-align: center;
-    padding: 60px 20px;
-    background: rgba(0, 20, 40, 0.8);
+    padding: 80px 20px;
+    background: rgba(0, 15, 35, 0.8);
     position: relative;
+    color: #f0f0f0;
 }
 
 .header .moon {
-    width: 100px;
-    height: 100px;
-    background: radial-gradient(circle, #fdfdfd, #d4d4d4);
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, #ffffff, #aaaaaa);
     border-radius: 50%;
     position: absolute;
     top: -20px;
-    right: 30px;
+    right: 40px;
     box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
     animation: float 4s ease-in-out infinite;
 }
@@ -88,40 +89,31 @@ body {
 }
 
 .header h1 {
-    font-size: 3rem;
-    color: #00c8ff;
+    font-size: 3.5rem;
+    color: #00aaff;
+    text-shadow: 0 0 10px #0077ff, 0 0 20px #0077ff;
 }
 
 .header p {
     font-size: 1.2rem;
-    color: #e0e0e0;
     margin: 20px 0;
 }
 
 .header button {
-    padding: 10px 20px;
-    background: #00c8ff;
+    padding: 12px 24px;
+    background: #00aaff;
     border: none;
     color: #fff;
     font-size: 1rem;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px #0077ff;
 }
 
 .header button:hover {
-    background: #007ac7;
-}
-
-/* Yağmur Efekti */
-#rain {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -1;
+    background: #0077ff;
+    box-shadow: 0 0 20px #0077ff;
 }
 
 /* Footer */
@@ -130,13 +122,9 @@ body {
     padding: 20px;
     background: #0c0f1a;
     color: #7d7d7d;
+    border-top: 1px solid #222;
 }
 
-.footer a {
-    color: #00c8ff;
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+.footer small {
+    color: #555;
 }
