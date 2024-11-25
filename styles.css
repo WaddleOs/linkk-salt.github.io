@@ -1,4 +1,164 @@
-/* GENEL AYARLAR */
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1e1e2f;
+    color: #ffffff;
+}
+
+/* Yağmur Efekti */
+#rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: url('rain.gif') repeat;
+    opacity: 0.3;
+}
+
+/* Navigasyon Menüsü */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background: #252540;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover, .navbar ul li a.active {
+    color: #00c9ff;
+}
+
+/* Üst Kısım */
+.header {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #252540, #1e1e2f);
+}
+
+.header h1 {
+    font-size: 48px;
+    margin: 0 0 10px;
+    color: #00c9ff;
+}
+
+.header p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.header button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00c9ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background 0.3s ease;
+}
+
+.header button:hover {
+    background-color: #007ea7;
+}
+
+/* Ana İçerik */
+.main-content {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.features h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #00c9ff;
+}
+
+.card {
+    background: #2b2b44;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    display: inline-block;
+    text-align: left;
+    width: 90%;
+    max-width: 400px;
+    margin: auto;
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #ffffff;
+}
+
+.card p {
+    font-size: 16px;
+    color: #bbbbbb;
+}
+
+.card ul {
+    padding: 0;
+    list-style: none;
+    color: #ffffff;
+}
+
+.card ul li {
+    margin-bottom: 10px;
+}
+
+.buy-button {
+    display: block;
+    margin: 20px auto 0;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #00c9ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #007ea7;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 20px;
+    background: #252540;
+    color: #bbbbbb;
+}
+
+.footer a {
+    color: #00c9ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    color: #007ea7;
+}
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
